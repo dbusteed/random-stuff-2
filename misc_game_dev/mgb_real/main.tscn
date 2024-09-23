@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsti2ks0jglem"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_kx2lo"]
+
+[node name="Main" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+script = ExtResource("1_kx2lo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+placeholder_text = "Name"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+item_count = 2
+selected = 0
+popup/item_0/text = "ws://"
+popup/item_0/id = 0
+popup/item_1/text = "wss://"
+popup/item_1/id = 1
+
+[node name="Hostname" type="TextEdit" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "localhost"
+placeholder_text = "Hostname"
+
+[node name="Port" type="TextEdit" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "5000"
+placeholder_text = "Port"
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Join Lobby"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

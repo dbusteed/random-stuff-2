@@ -1,0 +1,10 @@
+projects:
+  
+  project_name:
+  
+    group_name:
+      name: backup_db      
+      cron: 5 0 * * *
+
+      name: check_features
+      cron: 6 0 * * *

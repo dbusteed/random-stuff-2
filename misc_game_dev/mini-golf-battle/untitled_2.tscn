@@ -1,0 +1,192 @@
+[gd_scene load_steps=5 format=3 uid="uid://3s0era10k0h0"]
+
+[ext_resource type="PackedScene" uid="uid://yu7t68o5nmyt" path="res://untitled2.blend" id="1_5dv0t"]
+[ext_resource type="Material" uid="uid://c5wnlb82iaqs5" path="res://green.tres" id="2_nuhpc"]
+[ext_resource type="Material" uid="uid://dbctp4v77aw1d" path="res://brown.tres" id="3_wotb0"]
+[ext_resource type="Material" uid="uid://cibxj10uv5f1h" path="res://transperent.tres" id="4_ja2nl"]
+
+[node name="untitled2" instance=ExtResource("1_5dv0t")]
+
+[node name="RORX" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="XBOB" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="OTXT" parent="." index="2"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="LXLO" parent="." index="3"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="MXMX" parent="." index="4"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="XMLB" parent="." index="5"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="XBRM" parent="." index="6"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="MBRX" parent="." index="7"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="RTMX" parent="." index="8"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="MXLB" parent="." index="9"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="LXMT" parent="." index="10"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="LMXT" parent="." index="11"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="RTXM" parent="." index="12"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="OTLO" parent="." index="13"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="OORT" parent="." index="14"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="ROOB" parent="." index="15"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="LBOO" parent="." index="16"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="MMMX" parent="." index="17"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="MXMM" parent="." index="18"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="RMRO" parent="." index="19"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="LOLM" parent="." index="20"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="MMMM" parent="." index="21"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="XMMM" parent="." index="22"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="OTMT" parent="." index="23"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="MBOB" parent="." index="24"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="MMXM" parent="." index="25"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="LBRT" parent="." index="26"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="RTLB" parent="." index="27"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="MMRB" parent="." index="28"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="MBRM" parent="." index="29"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="RTMM" parent="." index="30"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="LMMT" parent="." index="31"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="XBRX" parent="." index="32"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="LXXT" parent="." index="33"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="RTXX" parent="." index="34"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="XXLB" parent="." index="35"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="XMMX" parent="." index="36"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="XXMM" parent="." index="37"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="MXXM" parent="." index="38"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="MMXX" parent="." index="39"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="XXMX" parent="." index="40"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="MXXX" parent="." index="41"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="XXXM" parent="." index="42"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="XMXX" parent="." index="43"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="XMXM" parent="." index="44"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("3_wotb0")
+
+[node name="OOOO" parent="." index="45"]
+surface_material_override/0 = ExtResource("2_nuhpc")
+surface_material_override/1 = ExtResource("4_ja2nl")

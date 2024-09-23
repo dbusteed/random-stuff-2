@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcrbewih1ecrb"]
+
+[ext_resource type="Script" path="res://hole.gd" id="1_0aedw"]
+[ext_resource type="Texture2D" uid="uid://o2gbab4jdprr" path="res://hole.png" id="2_8jx86"]
+[ext_resource type="Texture2D" uid="uid://b883ro5t6ftpd" path="res://path788.png" id="3_odwr1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0rshg"]
+radius = 23.0
+
+[node name="Hole" type="Node2D"]
+script = ExtResource("1_0aedw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.498039)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_8jx86")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.15)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_odwr1")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_0rshg")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

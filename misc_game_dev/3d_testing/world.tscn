@@ -1,0 +1,120 @@
+[gd_scene load_steps=14 format=3 uid="uid://difkoa5dv5qde"]
+
+[ext_resource type="Script" path="res://camera.gd" id="1_bq2tt"]
+[ext_resource type="Script" path="res://Ball.gd" id="2_6rp0e"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7c03h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3ybbg"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sbl8r"]
+albedo_color = Color(0.109804, 0.396078, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_undo0"]
+material = SubResource("StandardMaterial3D_sbl8r")
+size = Vector3(50, 1, 50)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qkmwp"]
+friction = 0.5
+bounce = 0.3
+
+[sub_resource type="SphereMesh" id="SphereMesh_esiq7"]
+radius = 0.3
+height = 0.6
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_h07fr"]
+radius = 0.3
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jkn7f"]
+friction = 0.4
+bounce = 0.3
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fiuml"]
+size = Vector3(30, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tywcu"]
+albedo_color = Color(0.305882, 0.12549, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xye27"]
+material = SubResource("StandardMaterial3D_tywcu")
+size = Vector3(30, 1, 1)
+
+[node name="World" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.301987, 0.953312, 0, -0.953312, 0.301987, 0, 27.2125, 10.2996)
+script = ExtResource("1_bq2tt")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+light_energy = 4.717
+shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_7c03h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_3ybbg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_undo0")
+skeleton = NodePath("../..")
+
+[node name="Ball" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.266, 5, 2.971)
+physics_material_override = SubResource("PhysicsMaterial_qkmwp")
+continuous_cd = true
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("2_6rp0e")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ball"]
+mesh = SubResource("SphereMesh_esiq7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ball"]
+shape = SubResource("SphereShape3D_h07fr")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15, 1, 0)
+physics_material_override = SubResource("PhysicsMaterial_jkn7f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D5"]
+shape = SubResource("BoxShape3D_fiuml")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/StaticBody3D5"]
+mesh = SubResource("BoxMesh_xye27")
+skeleton = NodePath("../../StaticBody3D5")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -15)
+physics_material_override = SubResource("PhysicsMaterial_jkn7f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D2"]
+shape = SubResource("BoxShape3D_fiuml")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/StaticBody3D2"]
+mesh = SubResource("BoxMesh_xye27")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 1, 0)
+physics_material_override = SubResource("PhysicsMaterial_jkn7f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D3"]
+shape = SubResource("BoxShape3D_fiuml")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/StaticBody3D3"]
+mesh = SubResource("BoxMesh_xye27")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 15)
+physics_material_override = SubResource("PhysicsMaterial_jkn7f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D4"]
+shape = SubResource("BoxShape3D_fiuml")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/StaticBody3D4"]
+mesh = SubResource("BoxMesh_xye27")
+skeleton = NodePath("../../StaticBody3D4")

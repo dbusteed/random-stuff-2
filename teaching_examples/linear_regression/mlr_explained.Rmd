@@ -1,0 +1,144 @@
+---
+title: "Multiple Linear Regression (MLR) Explained"
+output:
+  pdf_document: default
+  html_notebook: default
+---
+
+# Introduction
+Linear regression is one of the most fundamental modeling techniques used in both descriptive and predictive statistics. When we *regress* a single variable onto another, a Simple Linear Regression is used. When we are using several variables to estimate the *dependent* variable, the Multiple Linear Regression (MLR) model is used.
+
+Although it is fairly easy to use MLR modeling without understanding the underlying mathematics, the following Notebook can give you a brief overview of how MLR really works.
+
+# Getting Started
+If you've worked with any form of regression before, you should be aware that it is a parametric modeling approach. In other words, the output (or prediction) of the model is a function of 1) our predictor variables, and 2) some parameters (or coefficients):
+$$ prediction = f(predictors, parameters) $$
+More specifically, a standard MLR looks something like this:
+$$ {y_i} = {\beta_0} + {\beta_1}x_{i1} + {\beta_2}x_{i2} + \ldots + {\beta_k}x_{ik} + u_i $$
+where $y_i$ is the actual value of the dependent variable for individual $i$, $\beta_0$ is an intercept (or constant), $\beta_1\ldots\beta_k$ are the coefficients for their respective independent variables, $x_{i1} \ldots x_{ik}$ are the variable values for each $x$ for each individual ($i$), and $u_i$ is the error term that is unique to individual $i$.
+
+This model represents the entire population of interest. Because is very uncommon for us to have data on every observation in the population, we won't be able to know the true values the $\beta$ parameters. To make this clear, we will rewrite the model with estimators (designated with the "hats").
+$$ \hat{y_i} = \hat{\beta_0} + \hat{\beta_1}x_{i1} + \hat{\beta_2}x_{i2} + \ldots + \hat{\beta_k}x_{ik} $$
+Notice that $u_i$ isn't present in this model. During estimation, the true error term of the population is unknown to us. Instead, we will calculate the difference between $y_i$ and $\hat{y_i}$ as the *residual*.
+
+# Objective
+Because the residuals are essentially a measure of how well the model describes the relationship in the data, the objective of MLR is to choose the parameters that will result in the smallest residuals. In Ordinary Least-Squares Regression (OLS), this objective is formalized as finding the set of parameters that minimizes the sum of residuals squared.
+
+As mentioned above, we will never know the true values of the $\beta$ parameters; instead, we will derive a set of estimators for $\beta$ that we can use to make inferences and predictions.
+
+# Transition to Matrix Notation
+Before moving on, it is important to make sure that we can mathematically manipulate our model in matrix notation. Since there is no limit to the number of independent variables that can be included in the model, the previously explained notation will quickly become a hassle.
+
+As it is currently defined, the model inputs have the subscript $i$ to show that a different prediction will be made for each data point. We can visualize the data as every regression from $i$ to $n$:
+$$ \hat{y_1} = \hat{\beta_0} + \hat{\beta_1}x_{11} + \hat{\beta_2}x_{12} + \ldots + \hat{\beta_k}x_{1k} $$
+$$ \hat{y_2} = \hat{\beta_0} + \hat{\beta_1}x_{21} + \hat{\beta_2}x_{22} + \ldots + \hat{\beta_k}x_{2k} $$
+$$ \vdots $$
+$$ \hat{y_n} = \hat{\beta_0} + \hat{\beta_1}x_{n1} + \hat{\beta_2}x_{n2} + \ldots + \hat{\beta_k}x_{nk} $$
+
+This series of different individual regressions can be grouped together into 3 matrices:
+$$ \hat{Y} = 
+\begin{bmatrix}
+    y_1 \\
+    y_2 \\
+    \vdots \\
+    y_n
+\end{bmatrix}  
+; \hat{\beta} = 
+\begin{bmatrix}
+    \beta_0 \\
+    \beta_1 \\
+    \vdots \\
+    \beta_k
+\end{bmatrix}
+; X = 
+\begin{bmatrix}
+    1 & x_{11} & x_{12} & \dots & x_{1k} \\
+    1 & x_{21} & x_{22} & \dots & x_{2k} \\
+    \vdots & \vdots & \vdots & \ddots & \vdots \\
+    1 & x_{n1} & x_{n2} & \dots & x_{nk} \\
+\end{bmatrix}
+$$
+
+If you are familiar with matrix algebra, you will notice that $\hat{Y}$ is simply the *dot product* of $X$ and $\hat{\beta}$. It is also important to notice that the first column of $X$ are all 1s. These are the values that will be multiplied by the constant $\hat{\beta_0}$.
+
+# Derive the estimator for $\hat{\beta}$
+With our matrices set up, we are now able to derive the estimator for $\hat{\beta}$ in which the sum of square residuals will be minimized ( $\min\sum{\hat{u_i^2}}$ ).
+
+Before we start to minimize $\sum{\hat{u_i^2}}$ with respect to $\hat{\beta},$ we will simplify $\sum{\hat{u_i^2}}$ by separating ${u_i}^2$ into two matrices. By transposing one and bringing them back together, the sum of square residuals can be rewritten as $\hat{U'}\hat{U}$, where $\hat{U}$ is a $(n$ x $1)$ matrix of residuals.
+
+We can now derive the estimator that minimizes the sum of square residuals:
+
+$$ \min{\hat{U'}\hat{U}} $$
+
+From previous definitions we know that $\hat{U} = Y - \hat{Y}$ and $\hat{Y} = X\hat{\beta}$, therefore
+
+$$ \min{ (Y -\hat{Y})'(Y -\hat{Y}) } $$
+$$ \min{ (Y - X\hat{\beta})'(Y - X\hat{\beta}) } $$
+$$ \min{ Y'Y - Y'X\hat{\beta} - (X\hat{\beta})'Y } + (X\hat{\beta})'X\hat{\beta}$$
+$$ \min{ Y'Y - Y'X\hat{\beta} - \hat{\beta}'X'Y } + \hat{\beta}'X'X\hat{\beta}$$
+$$ \min{ Y'Y - 2\hat{\beta}X'Y + \hat{\beta}'X'X\hat{\beta} }$$
+
+To find the minimum of this expression in regards to $\hat{\beta}$, we will 1) take the derivative, 2) set it equal to zero, then 3) solve for $\hat{\beta}$.
+
+$$ \frac{\partial \hat{U'}\hat{U}}{\partial \hat{\beta}} = -2X'Y + 2X'X\hat{\beta} $$
+$$ -2X'Y + 2X'X\hat{\beta} = 0 $$
+$$ 2X'X\hat{\beta} = 2X'Y $$
+$$ X'X\hat{\beta} = X'Y $$
+$$ (X'X)^{-1}(X'X)\hat{\beta} = (X'X)^{-1}X'Y $$
+$$ \hat{\beta} = (X'X)^{-1}X'Y $$
+
+# Success!
+Awesome! We now know that $\hat{\beta} = (X'X)^{-1}X'Y$, but what next? If you think back to the formula from earlier, you'll remember that our model was missing the values for $\hat{\beta}$. Now that we have those, we can use the variables for any given observation and make a prediction.
+
+The next section gives an example of using the derivation of $\hat{\beta}$ to fit a MLR model without any pre-built functions.
+
+# Example in R
+
+R has a number of libraries we could use to fit a MLR model, but let's use the derivation of $\hat{\beta}$ to calculate the regression coefficients "manually".
+
+After doing so, we'll compare these results to those derived from a built-in MLR function provided by R.
+
+```{R}
+#
+# load some example data (`mtcars` should come with R)
+# we are going to predict 'mpg' with 5 of the other columns
+#
+cars <- mtcars[,c("mpg", "disp", "hp", "wt", "cyl")]
+
+#
+# set up our Y and X matrices
+#
+y <- cars[1]
+X <- cars[2:5]
+y <- t(matrix(unlist(y), ncol=nrow(y), byrow=TRUE))
+X <- t(matrix(unlist(X), ncol=nrow(X), byrow=TRUE))
+
+#
+# add a column of ones to X to handle the intercept
+#
+X <- cbind(1, X)
+
+#
+# our deviation showed that B = inverse((X'X)) * X' * Y,
+# so let's recreate that in R! we'll use the `solve` method
+# to get the inverse, and `%*%` to perform matrix multiplication
+#
+beta <- solve((t(X) %*% X)) %*% t(X) %*% y
+
+#
+# for comparison purposes, let's create the MLR using 
+# the built in method provide by R.
+#
+model = lm(mpg~disp+hp+wt+cyl, data=cars)
+lm.coefs <- coef(model)
+```
+
+```{R}
+# print the regression coefficients we calculated...
+cat(t(beta))
+```
+
+```{R}
+# ...and compare them to the ones from the built-in method
+cat(lm.coefs)
+```

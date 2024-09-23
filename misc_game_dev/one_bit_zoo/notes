@@ -1,0 +1,38 @@
+very simple zoo tycoon!
+- manage a zoo, get visitors, make attractions
+- build enclosures
+    - different types of fences / gates, 4-bit maps for theses (LATER)
+        - brick
+        - wood
+        - wire
+    - for now just stick with the kenny assets
+    - but will need bitmask for the sidewalks cause that's important
+    - different durability sprites
+- more traditional mouse-based tycoon
+- mvp no scrolling map, but maybe later
+- still need build menus, etc
+- but NO "PLAYER" (ie controllable move around guy)
+- so hud with key metrics, and even clickable menus (shortcuts too)
+    - front office
+    - staff
+    - animals
+    - build
+
+still could have some level of "skill progression" in the form
+of hiring employees or market research, or like you pay to 
+run a survey, and then you get to analyze the results
+
+but we don't want to get too in the weeds like this guy handles the tickets, this guy changes the toilet paper, if it's abstract it's
+okay but if i have to simulate that it's too much. so ya scale that back a bit. maybe just hire staff, and there can be different levels of staff, i.e. a 5-star zookeeper will be better for the animals but has a higher salary, same with maintainence / cleaners.
+
+
+
+happy animals
+- food, enclosure, friends, visitors
+
+money
+- payoff loan
+- adjust ticket prices
+- advertising
+- visitors vary by zoo score
+- maybe animals have varying populatarity

@@ -1,0 +1,8 @@
+__pycache__
+.ipynb_checkpoints
+.Rhistory
+*.out
+target
+node_modules
+.godot
+*.import

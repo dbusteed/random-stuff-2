@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgd4hmnkdwalg"]
+
+[ext_resource type="MeshLibrary" uid="uid://jjicd3numk4a" path="res://yeet2.tres" id="1_vnavc"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.976084, 0.217394, 0, -0.217394, 0.976084, 2.65576, 2.5871, 11.4453)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0990939, 0.995078, 0, -0.995078, 0.0990939, 0, 19.7362, -0.904124)
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_vnavc")
+cell_size = Vector3(4, 1, 4)
+data = {
+"cells": PackedInt32Array(0, 65535, 0, 65535, 65535, 0, 65535, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 65535, 0, 1, 65534, 0, 0, 65534, 0, 65535, 65534, 0, 65534, 65534, 0, 65534, 65535, 0, 65534, 0, 0, 65534, 1, 0, 65535, 1, 0, 1, 1, 0, 65536, 65535, 0, 131071, 65535, 0, 131071, 0, 0, 65536, 0, 0)
+}
+metadata/_editor_floor_ = Vector3(0, 1, 0)

@@ -1,0 +1,5 @@
+FULL WORKFLOW
+1. start manager script, which creates the first empty game room
+    - when game created, manager is notified
+2. clients join, request list of games (GET, no auth needed)
+3. when the client joins the server, the server tells the manager with a POST (maybe auth here?)

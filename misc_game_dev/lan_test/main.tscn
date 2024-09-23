@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=3 uid="uid://baay3kk4uskhq"]
+
+[ext_resource type="Theme" uid="uid://bij6e3e1nns4d" path="res://resources/ui_theme.tres" id="1_0mfms"]
+[ext_resource type="Script" path="res://main.gd" id="2_rssjh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_108ea"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xtoao"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_0mfms")
+script = ExtResource("2_rssjh")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextEdit" type="TextEdit" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+placeholder_text = "server name"
+scroll_fit_content_height = true
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_108ea")
+
+[node name="Host" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "HOST
+"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xtoao")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ItemList" type="ItemList" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_108ea")
+
+[node name="Join" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+disabled = true
+text = "JOIN"
+
+[node name="BroadcastTimer" type="Timer" parent="."]
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 18.0
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Host" to="." method="_on_host_pressed"]
+[connection signal="timeout" from="BroadcastTimer" to="." method="_on_broadcast_timer_timeout"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cuibma3wvn3tk"]
+
+[ext_resource type="Material" uid="uid://bjg7fhr8ggetw" path="res://white.tres" id="1_dx2pp"]
+[ext_resource type="Script" path="res://ball_2.gd" id="1_r2bxc"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fnknh"]
+radius = 0.25
+
+[sub_resource type="SphereMesh" id="SphereMesh_6d41b"]
+radius = 0.25
+height = 0.5
+
+[node name="ball2" type="RigidBody3D"]
+continuous_cd = true
+script = ExtResource("1_r2bxc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_fnknh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_6d41b")
+surface_material_override/0 = ExtResource("1_dx2pp")

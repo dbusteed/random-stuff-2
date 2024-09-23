@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://crhl2ucj2nfs0"]
+
+[ext_resource type="PackedScene" uid="uid://dexxqtykyjxih" path="res://map.tscn" id="1_2lxd5"]
+[ext_resource type="Script" path="res://Ball.gd" id="2_0t6tm"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_12o0f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dxih1"]
+albedo_color = Color(0.803922, 0.411765, 1, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xeejb"]
+
+[node name="World" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-3.61211e-08, 0.826354, -0.563151, -2.46161e-08, 0.563151, 0.826354, 1, 4.37114e-08, -5.32907e-15, -3.62731, 1.7664, -0.228413)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.135301, 0.990805, 0, -0.990805, 0.135301, -0.0630567, 2.97974, 0)
+
+[node name="Map" parent="." instance=ExtResource("1_2lxd5")]
+
+[node name="Ball" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.59523, -0.253517, -0.797254)
+script = ExtResource("2_0t6tm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ball"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+mesh = SubResource("SphereMesh_12o0f")
+surface_material_override/0 = SubResource("StandardMaterial3D_dxih1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ball"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+shape = SubResource("SphereShape3D_xeejb")
+
+[connection signal="input_event" from="Ball" to="Ball" method="_on_input_event"]

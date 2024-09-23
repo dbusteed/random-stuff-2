@@ -1,0 +1,103 @@
+[gd_scene load_steps=6 format=3 uid="uid://kf2a7c37bwin"]
+
+[ext_resource type="Script" path="res://village.gd" id="1_w2wey"]
+[ext_resource type="Texture2D" uid="uid://bi44e8onhq67b" path="res://tile_0117.png" id="1_xllnd"]
+[ext_resource type="Theme" uid="uid://7c2nlbo5hrxn" path="res://theme.tres" id="3_7b7rv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hswq2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_15qxd"]
+bg_color = Color(0.525101, 0.525101, 0.525101, 1)
+shadow_size = 10
+
+[node name="Village" type="Node2D"]
+script = ExtResource("1_w2wey")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_xllnd")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -32.0
+offset_top = -38.0
+offset_right = 32.0
+offset_bottom = -12.0
+theme = ExtResource("3_7b7rv")
+theme_override_font_sizes/font_size = 18
+text = "NAME"
+horizontal_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_hswq2")
+
+[node name="VillageMenu" type="CanvasLayer" parent="."]
+
+[node name="M" type="MarginContainer" parent="VillageMenu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_7b7rv")
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="P" type="Panel" parent="VillageMenu/M"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_15qxd")
+
+[node name="M" type="MarginContainer" parent="VillageMenu/M"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 20
+
+[node name="V" type="VBoxContainer" parent="VillageMenu/M/M"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="H" type="HBoxContainer" parent="VillageMenu/M/M/V"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VillageMenu/M/M/V/H"]
+layout_mode = 2
+text = "Name"
+
+[node name="VSeparator" type="VSeparator" parent="VillageMenu/M/M/V/H"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="VillageMenu/M/M/V/H"]
+layout_mode = 2
+text = "..."
+
+[node name="HSeparator" type="HSeparator" parent="VillageMenu/M/M/V"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VillageMenu/M/M/V"]
+layout_mode = 2
+fit_content = true
+
+[node name="HSeparator2" type="HSeparator" parent="VillageMenu/M/M/V"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="VillageMenu/M/M/V"]
+layout_mode = 2
+text = "Recruit  volunteers"
+
+[node name="Button2" type="Button" parent="VillageMenu/M/M/V"]
+layout_mode = 2
+disabled = true
+text = "Pillage"
+
+[node name="Button3" type="Button" parent="VillageMenu/M/M/V"]
+layout_mode = 2
+text = "Leave"

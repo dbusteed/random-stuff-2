@@ -1,0 +1,22 @@
+hole
+different shapes for obstacles
+bad walls
+goal is to make it to hole without toching
+hole can shrink with time?
+maybe still putt around to avoid obstacles
+
+cooldown? or can hit muliple times?
+- both would be fun
+- maybe add variation later?
+
+walls
+- some safe
+- some danger?
+
+hole
+- detect without collide?
+
+enemies
+- chasers, trianges
+- patrol, pentagon or hexagon
+- walls, square / rectangles

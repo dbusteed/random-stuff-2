@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  background-color: black;
+  color: white;
+  font-family: monospace;
+  font-size: 20px;
+}
+
+.loan-card {
+  border: 1px solid white;
+  padding: .25rem .5rem;
+  width: 500px;
+  margin-top: .5rem;
+}
+
+.loan-card-borrow {
+  border: 1px solid red;
+}
+
+.loan-card-lender {
+  border: 1px solid lightgreen;
+}
+
+.borrow {
+  color: red;
+}
+
+.lender {
+  color: lightgreen;
+}

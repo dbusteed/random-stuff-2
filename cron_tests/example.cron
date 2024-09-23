@@ -1,0 +1,5 @@
+# `two_minute_job.py` runs for two minutes, but is scheduled to run
+# every minute. `flock` is used to create a lock file, that prevents
+# the Python script to run if it is already running
+
+* * * * * cd /path/to/dir && flock -n this.lock ./two_minute_job.py

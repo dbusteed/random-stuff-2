@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvj6u51utrmhp"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_42osv"]
+[ext_resource type="Texture2D" uid="uid://b883ro5t6ftpd" path="res://path788.png" id="2_e0l70"]
+[ext_resource type="PackedScene" uid="uid://dkgac0ulk8sg8" path="res://ball.tscn" id="3_mw72d"]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_42osv")
+
+[node name="Line2D" type="Line2D" parent="."]
+width = 5.0
+
+[node name="DottedLine" type="Node2D" parent="."]
+
+[node name="Dot1" type="Sprite2D" parent="DottedLine"]
+visible = false
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("2_e0l70")
+
+[node name="Dot2" type="Sprite2D" parent="DottedLine"]
+visible = false
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("2_e0l70")
+
+[node name="Dot3" type="Sprite2D" parent="DottedLine"]
+visible = false
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("2_e0l70")
+
+[node name="Dot4" type="Sprite2D" parent="DottedLine"]
+visible = false
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("2_e0l70")
+
+[node name="Dot5" type="Sprite2D" parent="DottedLine"]
+visible = false
+scale = Vector2(0.106, 0.106)
+texture = ExtResource("2_e0l70")
+
+[node name="Balls" type="Node" parent="."]
+
+[node name="Ball" parent="Balls" instance=ExtResource("3_mw72d")]
+
+[node name="Ball2" parent="Balls" instance=ExtResource("3_mw72d")]
+
+[node name="Ball3" parent="Balls" instance=ExtResource("3_mw72d")]
+
+[node name="Ball4" parent="Balls" instance=ExtResource("3_mw72d")]
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

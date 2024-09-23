@@ -1,0 +1,100 @@
+each entity needs to know their grid position (x, y).
+the translation can be updated based on the grid position.
+and the grid position (x, y) gets translated to the 1d array.
+
+so let's say player is at (0, 0), then moves to (1, 0).
+- do we need to update the grid object to indicate where the player is now?
+- would probably be necessary for pathfinding, or maybe not.
+- maybe that's just for permenant objects like 
+
+residents can't traverse trees.
+
+player moves quicker on paths? (if i do a movement cooldown)
+- still need to decide if it's time based, action based, or movement based
+- if movement based, the paths could be less movement cost
+
+## gameplay
+
+premise
+- you manage a graveyard. the "residents" are "restless", and therefore
+  cannot (WHAT? go the afterlife? decompose?), so part of managing the
+  graveyard is making the residents happy. this could include things like
+  making the grounds nicer, cleaning there tombstones
+- BUT! and nighttime, because they are restless, they will awake and roam
+  the grounds. they might destroy the grounds, attack you, or try to escape
+
+goal
+- don't go bankrupt! you get a one-time payment for the resident, so quick
+  turnover is key! maybe other mechanics like bank loans, expanding the property
+
+daytime
+- you manage the yard, use your gold to build improvments, or free improvements like
+  pulling weeds, picking up trash
+    -> could later hire help for this!
+    -> maybe different tools for each job? and a tool shed?
+- learn about your residents and how to help them!
+
+nighttime
+- residents wake up! if they are very restless they will escape or cause trouble.
+  if they aren't too restless then they might just mozy around. maybe even visit attrractions like RCT haha
+- maybe some resident goals can only be achieved during night?
+- will need to "attack" the angry residents to make them go back to bed
+- they can attack you, and then you pass out for the night
+
+restlessness
+- all residents have some sort of restlessness
+- residents can't rest until that's fixed!
+- reasons for restlessness
+  - tombstone/graveyard is dirty
+  - want some visitors (which are attracted by good upkeep)
+  - want some sort of experience (see a duck, etc)
+  - lost love
+- when residents come in, they have an R score (0-100)
+- as conditions are met this is updated
+- learn about restlessness conditions by talking the them, or their family?
+- check their R status by looking at their gravestone, maybe notes go there too.
+- maybe show the unknown factors with "???"
+
+minimal UI
+- don't need a "residents" view, you just have to go look at the stones
+- no "money" menu, need to go to your office, or some paper to look at. i guess
+  the UI will be the same, some popup thing, but ya make it look like paper with notes
+  showing the income statement, etc
+- something to show graveyard score, cleanliness, fengsui (how would that be calculated?)
+
+money
+- residents pay rent for X days
+
+skills
+- player has skills like "charisma" which helps them talk to residents
+
+
+
+basic example
+- resident knows their plot position
+- tombstone linked to a resident so it can lookup the details
+- resident has list of conditions, which for now are just text descriptions
+
+
+
+possible titles?
+- Help me RIP?
+- i dunno something with "RIP" since that's the goal
+
+lotta movement...is that okay? 
+
+
+## future ideas
+- "run mode", hold shift to move by 3 spaces, etc
+- the map is pannable, with camera centered on player?
+- this would allow for expandable maps 
+
+maybe an issue with endgame, since yout graveyard will be fully upgraded,
+so would need to increase the resident restfullness requirements
+
+but maybe there is an end!
+
+
+
+
+could also do a zoo tycoon, pretty relaxed, manage animals, cleanup the park

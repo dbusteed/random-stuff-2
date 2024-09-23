@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8xw2veg5li3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tqoo4"]
+disable_receive_shadows = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_d3g06"]
+material = SubResource("StandardMaterial3D_tqoo4")
+radius = 0.125
+height = 0.25
+
+[node name="Dot" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_d3g06")

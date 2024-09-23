@@ -1,0 +1,13 @@
+- World
+  - TileMap
+  - Fog
+  - Units
+  - Enemies
+  - Bases
+
+Movement should be slow while reenetering trench too
+dash thru NML should be default?
+targeting
+base is one 4x4 sprite for MVP, maybe split it later
+
+

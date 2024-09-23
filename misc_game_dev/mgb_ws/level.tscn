@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://clbs0temha5te"]
+
+[ext_resource type="PackedScene" uid="uid://b0bpoquuk7x2q" path="res://untitled.blend" id="1_kygso"]
+[ext_resource type="PackedScene" uid="uid://dqrfxdd7kg74p" path="res://ball.tscn" id="2_ynogm"]
+
+[node name="level" instance=ExtResource("1_kygso")]
+
+[node name="Camera3D" type="Camera3D" parent="." index="8"]
+transform = Transform3D(1, 0, 0, 0, 0.859522, 0.511098, 0, -0.511098, 0.859522, 0, 2.91084, 4.35537)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="9"]
+transform = Transform3D(1, 0, 0, 0, 0.192967, 0.981205, 0, -0.981205, 0.192967, 0, 3.26812, 0)
+
+[node name="ball_red" parent="." index="10" instance=ExtResource("2_ynogm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.356598, 0)

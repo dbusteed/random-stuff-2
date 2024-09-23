@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4bwamq4q3m4w"]
+
+[ext_resource type="Script" path="res://helpers.gd" id="1_fsq12"]
+
+[node name="Helpers" type="Node"]
+script = ExtResource("1_fsq12")

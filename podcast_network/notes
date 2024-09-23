@@ -1,0 +1,18 @@
+1 -- SEARCH
+    - search for a show
+    - select a show
+    - add individuals
+      (person_id, person_name, [show_id])
+
+2 -- GET EPISODES
+    - get episdoes and update list
+    - this can maybe get all new episodes for shows in the table
+    - (show_id, episode_name, episode_desc, done=False)
+
+3 -- LABEL EPISODES
+    - click on epsidoe (undone ones)
+    - get suggested guest
+    - click to accept, or type them in
+    - (show_id, episode_id, epsiode_name, episode_desc, [guest_id], done=True)
+
+4 -- ???

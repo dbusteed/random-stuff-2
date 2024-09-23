@@ -1,0 +1,99 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdxlmwkp7ma4n"]
+
+[ext_resource type="Script" path="res://ai.gd" id="1_kl46r"]
+[ext_resource type="Texture2D" uid="uid://b6xjql3vdtngf" path="res://tile_0004.png" id="2_nippw"]
+[ext_resource type="Theme" uid="uid://7c2nlbo5hrxn" path="res://theme.tres" id="3_akr72"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hflw5"]
+radius = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cxmwc"]
+bg_color = Color(0.525101, 0.525101, 0.525101, 1)
+shadow_size = 10
+
+[node name="AI" type="Node2D"]
+script = ExtResource("1_kl46r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.817649, 0, 0.149136, 1)
+scale = Vector2(3, 3)
+texture = ExtResource("2_nippw")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -32.0
+offset_top = -35.0
+offset_right = 32.0
+offset_bottom = -9.0
+theme_override_font_sizes/font_size = 16
+text = "NAME"
+horizontal_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_hflw5")
+
+[node name="Menu" type="CanvasLayer" parent="."]
+
+[node name="M" type="MarginContainer" parent="Menu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_akr72")
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="P" type="Panel" parent="Menu/M"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cxmwc")
+
+[node name="M" type="MarginContainer" parent="Menu/M"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 20
+
+[node name="V" type="VBoxContainer" parent="Menu/M/M"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="H" type="HBoxContainer" parent="Menu/M/M/V"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Menu/M/M/V/H"]
+layout_mode = 2
+text = "Name"
+
+[node name="VSeparator" type="VSeparator" parent="Menu/M/M/V/H"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="Menu/M/M/V/H"]
+layout_mode = 2
+text = "..."
+
+[node name="HSeparator" type="HSeparator" parent="Menu/M/M/V"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Menu/M/M/V"]
+layout_mode = 2
+fit_content = true
+
+[node name="HSeparator2" type="HSeparator" parent="Menu/M/M/V"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="Menu/M/M/V"]
+layout_mode = 2
+text = "Fight"
+
+[node name="Button3" type="Button" parent="Menu/M/M/V"]
+layout_mode = 2
+text = "Leave"

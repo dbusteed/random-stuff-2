@@ -1,0 +1,30 @@
+add new show
+  - search thing, add host name (only if not added)
+view graph
+
+VALIDATE
+  - update all shows (button)
+    - get new episodes
+    - make predictions
+  - validate shows
+  - view validation progress
+
+database?
+
+maybe not a UI? or maybe flask?
+
+database better than json
+- probably more realistic
+
+SHOW
+  id, name, total_eps, last_updated
+
+SHOWPERSON
+  show_id, person
+
+EPISODES
+  show_id, ep_id, ep_title, ep_desc, labeled, validated, guests
+
+so maybe supabase instead?
+
+where does the code run? ie the python/spacy stuff?
